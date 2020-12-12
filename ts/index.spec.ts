@@ -17,4 +17,10 @@ describe('index', () => {
         expect(await AI.execute(actor)).toBeFalsy();
     });
 
+    test('addFunction', () => {
+        const fn = jest.fn().mockResolvedValue(true);
+        AI.addFunction('test', fn);
+        
+    });
+
 });
