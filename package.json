@@ -1,0 +1,42 @@
+{
+  "name": "gw-ai",
+  "version": "0.0.0",
+  "description": "Simple AI for Roguelikes",
+  "browser": "dist/gw-ai.min.js",
+  "main": "dist/gw-ai.js",
+  "module": "js/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/types": "^7.12.10",
+    "@types/jest": "^26.0.19",
+    "jest": "^26.6.3",
+    "jest-extended": "^0.11.5",
+    "rollup": "^2.34.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "compile": "tsc --build tsconfig.json",
+    "bundle": "rollup -c",
+    "copy": "cp dist/gw-ai.min.js docs/js",
+    "build": "npm run compile && npm run bundle && npm run copy",
+    "serve": "python -m SimpleHTTPServer",
+    "test": "jest",
+    "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/funnisimo/gw-ai.git"
+  },
+  "keywords": [
+    "roguelike",
+    "ai"
+  ],
+  "author": "Funnisimo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/funnisimo/gw-ai/issues"
+  },
+  "homepage": "https://github.com/funnisimo/gw-ai#readme"
+}
