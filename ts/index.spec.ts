@@ -1,11 +1,20 @@
 
-import * as Index from './index';
+import * as AI from './index';
 
 
 describe('index', () => {
 
-    test('dummy', () => {
-        expect(Index.test()).toEqual(4);
+    test('exports', () => {
+        expect(AI.addFunction).toBeFunction();
+        expect(AI.make).toBeFunction();
+        expect(AI.addKind).toBeFunction();
+        expect(AI.execute).toBeFunction();
+    });
+
+    test('simplest', async () => {
+        const actor = {} as AI.Actor;
+        actor.ai = AI.make();
+        expect(await AI.execute(actor)).toBeFalsy();
     });
 
 });
