@@ -1,6 +1,6 @@
 {
   "name": "gw-ai",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Simple AI for Roguelikes",
   "browser": "dist/gw-ai.min.js",
   "main": "dist/gw-ai.js",
