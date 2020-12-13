@@ -3,7 +3,7 @@ import * as AI from './index';
 
 describe('idle', () => {
 
-    test('calls endTurn', () => {
+    test('calls endTurn', async () => {
         const endTurn = jest.fn().mockReturnValue(true);
         AI.configure({ endTurn });
 
@@ -11,7 +11,7 @@ describe('idle', () => {
         actor.ai = AI.make(['idle']);
         expect(actor.ai.fns).toEqual(['idle']);
 
-        expect(AI.execute(actor)).toBeTruthy();
+        expect(await AI.execute(actor)).toBeTruthy();
         expect(endTurn).toHaveBeenCalledWith(actor, 1.0);
     });
 
