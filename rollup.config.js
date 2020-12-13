@@ -1,5 +1,5 @@
 
-// GW-TEXT: rollup.config.js
+// GW-AI: rollup.config.js
 
 import { terser } from "rollup-plugin-terser";
 

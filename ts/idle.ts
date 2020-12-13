@@ -1,6 +1,5 @@
 
-import { Actor } from './index';
-import { ACTIONS, addFunction } from './config';
+import { ACTIONS, addFunction, Actor } from './config';
 
 
 export async function idle(actor:Actor) {

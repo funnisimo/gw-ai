@@ -1,3 +1,5 @@
+;
+;
 async function NULL_FUNC() { }
 export const ACTIONS = {
     endTurn: NULL_FUNC,

@@ -1,14 +1,5 @@
 
-export type AIFunction = (actor:Actor) => Promise<boolean>;
-
-export interface Config {
-    fns: Array<AIFunction>;
-};
-
-export interface Actor {
-    ai: Config;
-};
-
+import { Config, AIFunction, Actor } from './config';
 
 var KINDS: Record<string,Config> = {};
 

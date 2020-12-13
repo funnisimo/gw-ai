@@ -1,4 +1,10 @@
-import { Actor, AIFunction } from './index';
+export declare type AIFunction = (actor: Actor) => Promise<boolean>;
+export interface Config {
+    fns: Array<AIFunction>;
+}
+export interface Actor {
+    ai: Config;
+}
 export interface Actions {
     endTurn: (actor: Actor, cost?: number) => void;
 }

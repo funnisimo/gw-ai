@@ -1,5 +1,3 @@
-;
-;
 var KINDS = {};
 export function addKind(id, config) {
     KINDS[id] = config;
