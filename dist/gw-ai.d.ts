@@ -15,4 +15,4 @@ declare function addKind(id: string, config: Config): boolean;
 declare function make(opts?: any): Config;
 declare function execute(actor: Actor): Promise<boolean>;
 
-export { addFunction, addKind, configure, execute, make };
+export { AIFunction, Actor, addFunction, addKind, configure, execute, make };
