@@ -42,7 +42,7 @@ export async function execute(actor: Actor) {
     return false;
 }
 
-export { configure, addFunction, Actor, AIFunction } from './config';
+export { configure, addFunction, Actor, AIFunction, Config } from './config';
 import './idle';
 
 
