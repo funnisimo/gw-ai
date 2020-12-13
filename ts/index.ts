@@ -9,19 +9,11 @@ export interface Actor {
     ai: Config;
 };
 
-var FUNCS: Record<string,AIFunction> = {};
-async function FALSE() { return false; }
-FUNCS.default = FALSE;
 
 var KINDS: Record<string,Config> = {};
 
 export function addKind(id:string, config: Config) {
     KINDS[id] = config;
-    return true;
-}
-
-export function addFunction(id:string, fn: AIFunction) {
-    FUNCS[id] = fn;
     return true;
 }
 
@@ -42,6 +34,8 @@ export function make(opts: any={}) {
     return config;
 }
 
+import { FUNCS } from './config';
+
 export async function execute(actor: Actor) {
     const config = actor.ai;
     const fns = config.fns || [];
@@ -56,3 +50,8 @@ export async function execute(actor: Actor) {
     }
     return false;
 }
+
+export { configure, addFunction } from './config';
+import './idle';
+
+

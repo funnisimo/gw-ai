@@ -1,15 +1,8 @@
 ;
 ;
-var FUNCS = {};
-async function FALSE() { return false; }
-FUNCS.default = FALSE;
 var KINDS = {};
 export function addKind(id, config) {
     KINDS[id] = config;
-    return true;
-}
-export function addFunction(id, fn) {
-    FUNCS[id] = fn;
     return true;
 }
 export function make(opts = {}) {
@@ -24,6 +17,7 @@ export function make(opts = {}) {
     }
     return config;
 }
+import { FUNCS } from './config';
 export async function execute(actor) {
     const config = actor.ai;
     const fns = config.fns || [];
@@ -39,3 +33,5 @@ export async function execute(actor) {
     }
     return false;
 }
+export { configure, addFunction } from './config';
+import './idle';

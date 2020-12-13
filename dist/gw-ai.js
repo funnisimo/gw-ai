@@ -2,16 +2,30 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+async function NULL_FUNC() { }
+const ACTIONS = {
+    endTurn: NULL_FUNC,
+};
+function configure(actions) {
+    Object.assign(ACTIONS, actions);
+}
 var FUNCS = {};
-async function FALSE() { return false; }
-FUNCS.default = FALSE;
+async function MISSING() { console.log('Missing AI'); return false; }
+FUNCS.default = MISSING;
+function addFunction(id, fn) {
+    FUNCS[id] = fn;
+    return true;
+}
+
+async function idle(actor) {
+    await ACTIONS.endTurn(actor, 1.0);
+    return true;
+}
+addFunction('idle', idle);
+
 var KINDS = {};
 function addKind(id, config) {
     KINDS[id] = config;
-    return true;
-}
-function addFunction(id, fn) {
-    FUNCS[id] = fn;
     return true;
 }
 function make(opts = {}) {
@@ -44,5 +58,6 @@ async function execute(actor) {
 
 exports.addFunction = addFunction;
 exports.addKind = addKind;
+exports.configure = configure;
 exports.execute = execute;
 exports.make = make;

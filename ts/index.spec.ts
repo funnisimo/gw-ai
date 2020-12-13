@@ -1,4 +1,5 @@
 
+import 'jest-extended';
 import * as AI from './index';
 
 
