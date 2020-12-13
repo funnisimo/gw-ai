@@ -4,3 +4,4 @@ export async function idle(actor) {
     return true;
 }
 addFunction('idle', idle);
+//# sourceMappingURL=idle.js.map

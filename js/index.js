@@ -35,3 +35,4 @@ export async function execute(actor) {
 }
 export { configure, addFunction } from './config';
 import './idle';
+//# sourceMappingURL=index.js.map

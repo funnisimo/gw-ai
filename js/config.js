@@ -12,3 +12,4 @@ export function addFunction(id, fn) {
     FUNCS[id] = fn;
     return true;
 }
+//# sourceMappingURL=config.js.map
